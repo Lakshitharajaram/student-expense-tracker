@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>💰 Student Expense Tracker</h1>
+            <p>Track your spending and manage your budget.</p>
+        </header>
+
+        <section class="summary">
+            <div class="card">
+                <h3>Monthly Budget</h3>
+                <h2 id="budget">₹0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Total Spent</h3>
+                <h2 id="total">₹0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Balance</h3>
+                <h2 id="balance">₹0</h2>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Set Monthly Budget</h2>
+            <div class="budget-form">
+                <input type="number" id="budgetInput" placeholder="Enter your budget">
+                <button onclick="setBudget()">Set Budget</button>
+            </div>
+
+            <h2>Add New Expense</h2>
+
+            <form id="expenseForm">
+                <input type="text" id="title" placeholder="Expense name" required>
+
+                <input type="number" id="amount" placeholder="Amount (₹)" min="1" required>
+
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option>Food</option>
+                    <option>Travel</option>
+                    <option>Shopping</option>
+                    <option>Education</option>
+                    <option>Other</option>
+                </select>
+
+                <input type="date" id="date" required>
+
+                <button type="submit">Add Expense</button>
+            </form>
+        </section>
+
+        <section class="expenses-section">
+            <h2>Expense History</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="expenseList">
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
